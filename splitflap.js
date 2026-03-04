@@ -148,8 +148,9 @@ const counter = new SplitFlapCounter(counterEl, 3, randomNumber);
 async function contador() {
     const asuncion = new Date('2027-12-10')
     const today = new Date()
-    const diferenciaMs = today - asuncion
+    const diferenciaMs = asuncion - today
     const t = Math.floor(diferenciaMs / (1000 * 60 * 60 *24))
+    document.title = "Faltan " + t + " días"
     await counter.animateTo(t, { cycles: 1, stepDelay: 1 });
 }
 
