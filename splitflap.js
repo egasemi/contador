@@ -146,7 +146,7 @@ const randomNumber = Math.round(Math.random() * 100)
 const counter = new SplitFlapCounter(counterEl, 3, randomNumber);
 
 async function contador() {
-    const asuncion = new Date('2027-12-10')
+    const asuncion = new Date('2027-12-10T00:00:00')
     const today = new Date()
     const diferenciaMs = asuncion - today
     const t = Math.floor(diferenciaMs / (1000 * 60 * 60 *24))
