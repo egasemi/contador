@@ -25,6 +25,17 @@ body {
   z-index: 10;
 }
 
+.boardOverlayPic{
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .boardOverlayPic > *{
+    width: 100%;
+    height: 100%;
+  }
+
 /* El tablero SIEMPRE respeta el ancho de pantalla */
 .board {
   position: relative;
@@ -37,6 +48,22 @@ body {
   --digits-h: 75%; /* alto total del bloque */
   --digits-gap: 0.2%; /* separación entre dígitos */
 }
+
+@media (max-width: 640px){
+    .board{
+        margin-top: 5em;
+        margin-bottom: 5em;
+      /* si overlay_celu tiene otra proporción, cambiala acá */
+      aspect-ratio: 1080 / 1920; /* EJEMPLO: si el celu es vertical */
+      
+      /* valores calibrados para overlay_celu.png */
+      --digits-left: 20%;
+      --digits-top: 13%;
+      --digits-w: 27%;
+      --digits-h: 9%;
+      --digits-gap: 0%;
+    }
+  }
 
 .counter--board {
   position: absolute;
